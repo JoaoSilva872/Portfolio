@@ -1,0 +1,3 @@
+Shoplus - Site - Projeto Individual
+
+Este Projeto é um site que simula uma loja online feito para aprender as bases de Html Css e JavaScript

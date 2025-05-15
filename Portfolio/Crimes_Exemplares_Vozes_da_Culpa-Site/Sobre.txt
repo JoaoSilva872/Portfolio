@@ -1,0 +1,4 @@
+Crimes Exemplares Vozes da Culpa - Site - Projeto de Grupo
+
+Este projeto é uma adptação de contos do livro Crimes Exemplares de Max Aub feito em colaboração com Helder Rafael Repas Faria e Bernardo Tavares
+Neste projeto fiquei responsavel pela estrutura Html CSS e JavaScript do site.

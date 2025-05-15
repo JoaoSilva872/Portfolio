@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="CSS/geral.css"/>
+    <link rel="stylesheet" href="CSS/Produto_Page.css"/>
+    <title>SHOPLUS / Rato de Escritorio</title>
+</head>
+<body>
+<header>
+    <a href="index.html"><h1>SHOPLUS</h1></a>
+</header>
+<main>
+    <div class="produto">
+        <img src="Imagens\Mouse.png" alt="Imagem de Produto" width="480" height="320">
+        <div class="texto">
+            <h3 class="nome_produto">Rato de escritorio</h3>
+            <div class="descricao">
+                <p>Rato de computador para escritório, ideal para quem precisa de conforto e precisão no dia
+                    a
+                    dia de trabalho. Sem Fios/Bluetooth. Design confortável e ergonômico para
+                    utilização
+                    prolongada sem fadiga.</p>
+            </div>
+        </div>
+        <p class="botao">+ Carrinho</p>
+    </div>
+    <div class="review-section">
+        <h1>Avaliações</h1>
+        <ul class="review-list" id="reviewList"></ul>
+
+        <div class="review-form">
+            <textarea id= "reviewInput" placeholder="Escreva sua avaliação..."></textarea>
+            <button onclick="addReview()">Enviar Avaliação</button>
+        </div>
+    </div>
+
+</main>
+<footer>
+    <div>
+        <p>&copy; 2024 SHOPLUS. Todos os direitos reservados.</p>
+    </div>
+    <div>
+        <p>Contacto: 987 654 321</p>
+        <p>Email: emailqualquer@gmail.com</p>
+    </div>
+</footer>
+<script src="JavaScript/comentarios.js"></script>
+</body>
+</html>

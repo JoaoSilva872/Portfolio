@@ -1,0 +1,4 @@
+Hesteria - Poster Interativo - Trabalho Individual
+
+Este projeto é um Poster interativo feito com programação em processing. 
+A proposta era dar vida a palavra, para isso fiz o cenrio mudar de fundo e as letras tremerem caso o rato fique proximo da palavra.

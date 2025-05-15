@@ -1,0 +1,182 @@
+section {
+    margin-top: 200px;
+    margin-bottom: 200px;
+    display: flex;
+}
+
+.produtos_contaienr{
+    position: relative;
+    left: 10%;
+    width: 50%;
+    padding: 25px;
+    height: 330px;
+    background: gray;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border: 4px solid black;
+    border-radius: 5px;
+    box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.5);
+}
+
+.produto{
+    position: relative;
+    display: flex;
+    height: 160px;
+    margin-bottom: 10px;
+    width: 100%;
+    background: royalblue;
+    text-decoration: none;
+    border: 4px solid black;
+    border-radius: 5px;
+    box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.5);
+}
+
+img{
+    margin-right: 25px;
+    border-right: solid 4px black;
+}
+
+.nome_produto{
+    position: relative;
+    bottom: 12px;
+    font-size: 18pt;
+    font-family: sans-serif;
+    color: white;
+}
+
+.descricao{
+    position: relative;
+    bottom: 32px;
+    font-family: sans-serif;
+    background: white;
+    color: black;
+    width: 90%;
+    height: 100px;
+    border-radius: 10px;
+    border: black solid 3px;
+}
+
+.descricao > p{
+    position: relative;
+    bottom: 15px;
+    padding: 10px;
+}
+
+.preco{
+    position: absolute;
+    color: white;
+    font-weight: bold;
+    right: 20px;
+}
+.pagamento{
+    position: relative;
+    left: 300px;
+    top:-10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.conta{
+    margin: 10px;
+    background: lightgray;
+    padding: 50px;
+    padding-top: 10px;
+    padding-bottom: 60px;
+    text-align: center;
+    border: black solid 2px;
+    border-radius: 20px;
+}
+
+.botao{
+    display: inline-block;
+    padding: 10px 40px;
+    height: 16px;
+    background-color: white;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    border: solid black 2px;
+}
+
+@media (max-width: 768px) {
+    section {
+        flex-direction: column;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .produtos_contaienr {
+        position: relative;
+        left: 0;
+        width: 90%;
+        padding: 15px;
+        margin: 0 auto 20px auto;
+        transform: scale(80%);
+        overflow: scroll;
+    }
+
+    .produto {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        transform: scale(80%);
+        margin-top: -30px;
+    }
+
+    img {
+        width: 100%;
+        border: black solid 4px;
+        height: auto;
+        margin: 0 0 10px 0;
+    }
+
+    .texto {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nome_produto {
+        font-size: 20pt;
+    }
+
+    .descricao {
+        position: relative;
+        left: 14px;
+        height: auto;
+        padding: 0px;
+    }
+
+    .descricao > p{
+        font-size: 18px;
+    }
+
+    .preco {
+        font-size: 25px;
+        position: static;
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    .pagamento {
+        width: 90%;
+        margin: 0 auto;
+        top: 0;
+        left: 0;
+    }
+
+    .conta {
+        padding: 20px;
+        font-size: 14px;
+    }
+
+    .botao {
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}

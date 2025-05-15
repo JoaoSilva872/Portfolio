@@ -1,0 +1,4 @@
+FaceSwap - Site - Trabalho individual
+
+Neste projeto usei as bibliotecas ml5.js e p5.js para colocar mascaras na cara do utilizador com através do reconhecimento facial das bibliotecas.
+Este projeto é da minha autoria, contendo imagens de pessoas voluntarias para criação de mascaras nomiadamente Rafael Faria e Daniel Sousa.

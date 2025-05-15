@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de Avaliações com Excluir</title>
+  <style>
+    /* Estilo básico para o corpo da página */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    /* Estilo para o produto */
+    .product {
+      margin-bottom: 20px;
+    }
+
+    .product img {
+      width: 200px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+
+    /* Seção de avaliações */
+    .review-section {
+      margin-top: 20px;
+    }
+
+    .review-section h3 {
+      margin-bottom: 10px;
+    }
+
+    /* Lista de avaliações */
+    .review-list {
+      margin: 20px 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    /* Cada item na lista de avaliações */
+    .review-item {
+      display: flex; /* Coloca texto e botão lado a lado */
+      justify-content: space-between; /* Espaça os elementos */
+      align-items: center; /* Centraliza verticalmente */
+      border-bottom: 1px solid #ddd; /* Linha de separação */
+      padding: 10px 0;
+    }
+
+    .review-item:last-child {
+      border-bottom: none; /* Remove a linha do último item */
+    }
+
+    /* Botão de excluir */
+    .review-item button {
+      background-color: #dc3545; /* Cor vermelha */
+      color: #fff; /* Texto branco */
+      border: none; /* Remove bordas */
+      border-radius: 5px; /* Bordas arredondadas */
+      padding: 5px 10px;
+      cursor: pointer; /* Mostra cursor de mão */
+    }
+
+    .review-item button:hover {
+      background-color: #c82333; /* Tom mais escuro ao passar o mouse */
+    }
+
+    /* Formulário de envio de avaliação */
+    .review-form {
+      display: flex;
+      flex-direction: column; /* Elementos organizados em coluna */
+    }
+
+    .review-form textarea {
+      width: 100%; /* Ocupa toda a largura disponível */
+      height: 60px; /* Altura do campo de texto */
+      margin-bottom: 10px; /* Espaço abaixo */
+      padding: 10px;
+      font-size: 14px;
+      border: 1px solid #ccc; /* Borda cinza */
+      border-radius: 5px;
+    }
+
+    .review-form button {
+      align-self: flex-end; /* Alinha o botão à direita */
+      padding: 10px 20px;
+      background-color: #28a745; /* Cor verde */
+      color: #fff; /* Texto branco */
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .review-form button:hover {
+      background-color: #218838; /* Tom mais escuro ao passar o mouse */
+    }
+  </style>
+</head>
+<body>
+<!-- Informações do produto -->
+<div class="product">
+  <h2>Produto Fictício</h2>
+  <img src="https://via.placeholder.com/200" alt="Produto">
+  <p>Este é um produto fictício para demonstração do sistema de avaliações.</p>
+</div>
+
+<!-- Seção de avaliações -->
+<div class="review-section">
+  <h3>Avaliações</h3>
+  <!-- Lista onde as avaliações serão exibidas -->
+  <ul class="review-list" id="reviewList"></ul>
+
+  <!-- Formulário para adicionar novas avaliações -->
+  <div class="review-form">
+    <textarea id="reviewInput" placeholder="Escreva sua avaliação..."></textarea>
+    <button onclick="addReview()">Enviar Avaliação</button>
+  </div>
+</div>
+
+<script>
+  // Referências aos elementos do DOM
+  const reviewList = document.getElementById('reviewList'); // Lista onde as avaliações são exibidas
+  const reviewInput = document.getElementById('reviewInput'); // Campo de texto para nova avaliação
+
+  /**
+   * Carrega as avaliações salvas no Local Storage ao iniciar a página.
+   * As avaliações são armazenadas como um array em formato JSON.
+   */
+  function loadReviews() {
+    const savedReviews = localStorage.getItem('reviews'); // Obtém avaliações salvas
+    if (savedReviews) {
+      const reviews = JSON.parse(savedReviews); // Converte o JSON para um array
+      // Adiciona cada avaliação ao DOM
+      reviews.forEach((reviewText, index) => addReviewToDOM(reviewText, index));
+    }
+  }
+
+  /**
+   * Adiciona uma avaliação ao DOM (exibição na página).
+   * @param {string} reviewText - Texto da avaliação.
+   * @param {number} index - Índice da avaliação no Local Storage.
+   */
+  function addReviewToDOM(reviewText, index) {
+    const reviewItem = document.createElement('li'); // Cria um novo item de lista
+    reviewItem.className = 'review-item';
+
+    // Cria um elemento para o texto da avaliação
+    const reviewTextSpan = document.createElement('span');
+    reviewTextSpan.textContent = reviewText;
+
+    // Cria um botão de excluir para a avaliação
+    const deleteButton = document.createElement('button');
+    deleteButton.textContent = 'Excluir';
+    deleteButton.onclick = () => deleteReview(index); // Associa a função de exclusão
+
+    // Adiciona o texto e o botão ao item de lista
+    reviewItem.appendChild(reviewTextSpan);
+    reviewItem.appendChild(deleteButton);
+
+    // Adiciona o item de lista à lista de avaliações
+    reviewList.appendChild(reviewItem);
+  }
+
+  /**
+   * Salva uma nova avaliação no Local Storage.
+   * @param {string} reviewText - Texto da avaliação a ser salva.
+   */
+  function saveReviewToStorage(reviewText) {
+    const savedReviews = localStorage.getItem('reviews'); // Obtém avaliações salvas
+    const reviews = savedReviews ? JSON.parse(savedReviews) : []; // Cria um array se não existir
+    reviews.push(reviewText); // Adiciona a nova avaliação
+    localStorage.setItem('reviews', JSON.stringify(reviews)); // Salva o array atualizado
+  }
+
+  /**
+   * Adiciona uma nova avaliação.
+   * Verifica se o texto não está vazio, adiciona ao DOM e ao Local Storage.
+   */
+  function addReview() {
+    const reviewText = reviewInput.value.trim(); // Obtém o texto sem espaços desnecessários
+
+    if (reviewText) {
+      saveReviewToStorage(reviewText); // Salva a avaliação no Local Storage
+      const index = JSON.parse(localStorage.getItem('reviews')).length - 1; // Índice da nova avaliação
+      addReviewToDOM(reviewText, index); // Adiciona a avaliação ao DOM
+      reviewInput.value = ''; // Limpa o campo de texto
+    } else {
+      alert('Por favor, escreva uma avaliação antes de enviar!'); // Alerta se o campo estiver vazio
+    }
+  }
+
+  /**
+   * Exclui uma avaliação.
+   * Remove a avaliação do Local Storage e atualiza o DOM.
+   * @param {number} index - Índice da avaliação a ser excluída.
+   */
+  function deleteReview(index) {
+    const savedReviews = localStorage.getItem('reviews'); // Obtém avaliações salvas
+    if (savedReviews) {
+      const reviews = JSON.parse(savedReviews); // Converte JSON para array
+      reviews.splice(index, 1); // Remove a avaliação pelo índice
+      localStorage.setItem('reviews', JSON.stringify(reviews)); // Salva o array atualizado
+
+      // Recarrega a lista de avaliações no DOM
+      reviewList.innerHTML = ''; // Limpa a lista atual
+      reviews.forEach((reviewText, newIndex) => addReviewToDOM(reviewText, newIndex));
+    }
+  }
+
+  // Carrega as avaliações salvas ao carregar a página
+  loadReviews();
+</script>
+</body>
+</html>

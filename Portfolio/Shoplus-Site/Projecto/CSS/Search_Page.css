@@ -1,0 +1,186 @@
+header input[type="text"] {
+    padding: 8px;
+    padding-right: 200px;
+    border: 3px solid black;
+    border-radius: 12px;
+}
+
+#barra{
+    position: absolute;
+    bottom:28%;
+    right: 215px;
+}
+
+main{
+    min-height: 1200px;
+}
+
+section {
+    display: flex;
+}
+
+.produtos_contaienr{
+    width: 70%;
+    padding: 50px;
+    padding-top: 120px;
+
+}
+
+a{
+    text-decoration: none;
+}
+
+.produto{
+    position: relative;
+    display: flex;
+    height: 160px;
+    margin-bottom: 25px;
+    width: 100%;
+    background: royalblue;
+    text-decoration: none;
+    border: 4px solid black;
+    border-radius: 5px;
+    box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.5);
+}
+
+.produto:hover {
+    position: relative;
+    left: 5px;
+    top: 5px;
+}
+
+img{
+    margin-right: 25px;
+    border-right: solid 4px black;
+}
+
+.nome_produto{
+    position: relative;
+    bottom: 12px;
+    font-size: 18pt;
+    font-family: sans-serif;
+    color: white;
+}
+
+.descricao{
+    position: relative;
+    bottom: 32px;
+    font-family: sans-serif;
+    background: white;
+    color: black;
+    width: 90%;
+    height: 100px;
+    border-radius: 10px;
+    border: black solid 3px;
+}
+
+.descricao > p{
+    position: relative;
+    bottom: 15px;
+    padding: 10px;
+}
+
+.preco{
+    position: absolute;
+    color: white;
+    font-weight: bold;
+    right: 20px;
+}
+
+video{
+    position: fixed;
+    right:80px;
+    top:150px;
+}
+
+@media(max-width: 768px){
+
+    header input[type="text"] {
+        padding: 8px;
+        width: 180px;
+        border: 3px solid black;
+        border-radius: 12px;
+    }
+
+    #barra{
+        position: absolute;
+        bottom:18%;
+        right: 120px;
+    }
+
+    .video{
+        display: none;
+    }
+
+    .produtos_contaienr{
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 90%;
+        justify-content: center;
+    }
+
+    .produto {
+        position: relative;
+        display: inline-block;
+        margin: 25px;
+        width: 240px;
+        height: 310px;
+        background: royalblue;
+        border: 4px solid black;
+        border-radius: 12px;
+        box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.5);
+        overflow: hidden;
+    }
+
+    .nome_produto{
+        position: relative;
+        padding-left: 10px;
+        font-family: sans-serif;
+        color: white;
+        font-size: 14pt;
+    }
+
+    .produto > img {
+        width: 100%;
+        border-bottom: black solid 3px;
+    }
+
+    .descricao {
+        position: relative;
+        right: 10px;
+        bottom: 25px;
+        width: 110%;
+        height: 78px;
+        background: white;
+        color: black;
+        border-style: solid none solid none;
+        text-align: center;
+        font-size: 14px;
+        overflow: hidden;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+    .descricao > p{
+        font-family: sans-serif;
+        position: relative;
+        bottom: 27px;
+    }
+
+    .preco{
+        position: absolute;
+        font-family: sans-serif;
+        font-weight: bold;
+        color: white;
+        bottom: -10px;
+        left: 75%;
+    }
+}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,43 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: black
+  }
+
+  main > div{
+    position: absolute;
+    left: 67%;
+    top:10%;
+    background-color: black;
+    width: 480px;
+    height: 580px;
+  }
+
+  main > div > p{
+    margin: 10px;
+    margin-top: 50px;
+    font-size: 14pt;
+    text-align: center;
+    font-family: sans-serif;
+    color: white;
+  }
+
+  main > div > h1{
+    position: absolute;
+    margin: 10px;
+    font-size: 16pt;
+    font-family: sans-serif;
+    color: white;
+    left: 20px;
+    bottom: 100px;
+  }
+
+  canvas {
+    position: absolute;
+    top:5%;
+    left: 2%;
+    border: solid gray 10px;
+    border-radius: 20px;
+    display: block;
+  }
+

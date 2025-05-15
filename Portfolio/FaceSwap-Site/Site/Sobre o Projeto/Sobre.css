@@ -1,0 +1,34 @@
+body{
+    background: black;
+}
+
+div{
+    margin: 200px;
+}
+
+h1{
+    text-align: center;
+    color: white;
+    font-size: 18pt;
+    font-family: sans-serif 
+}
+
+p{
+    margin: 50px;
+    text-align: center;
+    color: white;
+    font-size: 18pt;
+    font-family: sans-serif;
+}
+
+a{
+    font-family: sans-serif;
+    text-decoration: none;
+    color: white;
+    margin: 30px;
+  }
+
+  a:hover{
+   color: lightgray;
+   text-decoration: underline;
+  }

@@ -1,0 +1,65 @@
+body{
+  background-color: black;
+}
+
+div{
+  font-family: sans-serif;
+    position: absolute;
+    text-align: center;
+    left: 40%;
+    top: 28%;
+}
+
+h1{
+  font-size: 52pt;
+  color: white;
+}
+
+p{
+  position: relative;
+  font-size: 14pt;
+  bottom: 40px;
+  color: white;
+}
+
+button{
+  position: relative;
+    padding: 12px;
+    min-width: 100px;
+    background-color: white;
+    border: solid black 3px;
+    border-radius: 10px;
+    font-size: 14pt;
+    bottom: 40px;
+  }
+
+  button:hover{
+    cursor: pointer;
+    background-color: lightgray;
+  }
+
+  a{
+    font-family: sans-serif;
+    text-decoration: none;
+    color: white;
+    margin: 30px;
+  }
+
+  a:hover{
+   color: lightgray;
+   text-decoration: underline;
+  }
+
+  button > a{
+    text-decoration: none;
+    color: black;
+  }
+
+
+  footer {
+    display: flex;
+    position: absolute;
+    right: 50px;
+    bottom: 25px;
+  }
+
